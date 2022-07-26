@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from 'redux/contacts/actions';
 import s from './App.module.css';
-import Form from '../../07-phonebook/src/components/Form/Form';
-import ContactList from '../../07-phonebook/src/components/Contacts/ContactList';
-import Filter from '../../07-phonebook/src/components/Filter/Filtet';
-import WindowModal from '../../07-phonebook/src/components/Modal/Modal';
+import Form from './components/Form/Form';
+import ContactList from './components/Contacts/ContactList';
+import Filter from './components/Filter/Filtet';
+import WindowModal from './components/Modal/Modal';
 
 function App() {
   const contacts = useSelector(state => state.contacts.items);

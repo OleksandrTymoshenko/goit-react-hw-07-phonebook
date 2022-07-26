@@ -3,7 +3,7 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 
 const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
-  const contacts = await axios('http://localhost:4040/contacts').then(
+  const contacts = await axios('https://62dfa0389c47ff309e89cb7b.mockapi.io/contacts/contacts').then(
     res => res.data
   );
   return contacts;
@@ -11,17 +11,17 @@ const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
 
 const addContacts = createAsyncThunk(
   'contacts/add',
-  async ({ name, number }) => {
-    await axios.post('http://localhost:4040/contacts', {
+  async ({ name, phone }) => {
+    await axios.post('https://62dfa0389c47ff309e89cb7b.mockapi.io/contacts/contacts', {
       id: nanoid(),
       name,
-      number,
+      phone,
     });
   }
 );
 
 const deleteContacts = createAsyncThunk('contacts/delete', async id => {
-  await axios.delete(`http://localhost:4040/contacts/${id}`);
+  await axios.delete(`https://62dfa0389c47ff309e89cb7b.mockapi.io/contacts/contacts/${id}`);
 });
 
 const filterName = createAction('contacts/filterName');
